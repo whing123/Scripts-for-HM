@@ -1,0 +1,7 @@
+logs path: logs\CalmingWater2_1920x1080_60_10b_420_709_1490.log
+output path:
+adding item: SSIM
+***end***
+
+Notice:
+# added items should be isolated by space and be the same as that in logs including spelling and order

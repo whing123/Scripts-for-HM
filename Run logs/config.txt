@@ -1,0 +1,7 @@
+logs path: D:\ICIP GC for HM Test\Run tests\run wangh\result\output_17_07_12_10_36_51_TAppEncoder2\logs\
+output path:
+adding item: MSSIM
+***end***
+
+Notice:
+# added items should be isolated by space and be the same as that in logs including spelling and order
