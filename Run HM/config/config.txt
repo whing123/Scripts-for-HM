@@ -1,0 +1,62 @@
+identifier: 16.10£¬
+exe path: exe\TAppEncoder.exe
+cfg1 path: cfg\encoder_randomaccess_main.cfg
+cfg2 path: cfg\per-sequence\
+seq path: E:\Seq\
+result path: result\
+extra cmd:  #
+mode: 1    # 1: rate control, 0: QP
+
+testing seq and rate:
+class: classB
+BasketballDrive_1920x1080_50       2000 3000 7000 10000
+BQTerrace_1920x1080_60             2000 3000 7000 10000
+Cactus_1920x1080_50                2000 3000 7000 10000
+Kimono_1920x1080_24                1000 1600 4000 6000
+ParkScene_1920x1080_24             1000 1600 4000 6000
+###
+class: classC
+BasketballDrill_832x480_50         384 512 1200 2000
+BQMall_832x480_60                  384 512 1200 2000
+PartyScene_832x480_50              384 512 1200 2000
+RaceHorsesC_832x480_30             384 512 1200 2000
+###
+class: classD
+BasketballPass_416x240_50          256 384 850 1500
+BlowingBubbles_416x240_50          256 384 850 1500
+BQSquare_416x240_60                256 384 850 1500
+RaceHorses_416x240_30              256 384 850 1500
+###
+class: classE
+FourPeople_1280x720_60             512 1000 2000 4000
+Johnny_1280x720_60                 512 1000 2000 4000
+KristenAndSara_1280x720_60         512 1000 2000 4000
+###
+***end***
+
+
+reference:
+class: classB
+BasketballDrive_1920x1080_50       2000 3000 7000 10000
+BQTerrace_1920x1080_60             2000 3000 7000 10000
+Cactus_1920x1080_50                2000 3000 7000 10000
+Kimono_1920x1080_24                1000 1600 4000 6000
+ParkScene_1920x1080_24             1000 1600 4000 6000
+###
+class: classC
+BasketballDrill_832x480_50         384 512 1200 2000
+BQMall_832x480_60                  384 512 1200 2000
+PartyScene_832x480_50              384 512 1200 2000
+RaceHorsesC_832x480_30             384 512 1200 2000
+###
+class: classD
+BasketballPass_416x240_50          256 384 850 1500
+BlowingBubbles_416x240_50          256 384 850 1500
+BQSquare_416x240_60                256 384 850 1500
+RaceHorses_416x240_30              256 384 850 1500
+###
+class: classE
+FourPeople_1280x720_60             512 1000 2000 4000
+Johnny_1280x720_60                 512 1000 2000 4000
+KristenAndSara_1280x720_60         512 1000 2000 4000
+###
