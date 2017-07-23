@@ -2,10 +2,11 @@
 [Python][py] scripts for [HM][hevc] [run, analyze, ...]  
 
 **注：**  
-所有脚本只适用于Python 3以上  
+所有脚本只适用于Python 3以上  
+
 **准备工作：**  
 1. 日志处理时需提前安装[xlwt][xls]  
-2. 画图时需提前安装matplotlib[mat] 和 numpy[num]  
+2. 画图时需提前安装[matplotlib][mat] 和 [numpy][num]  
 
 [py]:https://www.python.org/downloads/
 [hevc]:http://www.hevc.info/
