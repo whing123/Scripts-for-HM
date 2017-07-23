@@ -1,12 +1,17 @@
 # Scripts-for-HM (Windows)
 [Python][py] scripts for [HM][hevc] [run, analyze, ...]  
 
-注：所有脚本只适用于Python 3以上  
-准备工作：日志处理时需提前安装[xlwt][xls]  
+**注：**  
+所有脚本只适用于Python 3以上  
+**准备工作：**  
+1. 日志处理时需提前安装[xlwt][xls]  
+2. 画图时需提前安装matplotlib[mat] 和 numpy[num]  
 
 [py]:https://www.python.org/downloads/
 [hevc]:http://www.hevc.info/
 [xls]:https://pypi.python.org/pypi/xlwt
+[mat]:http://matplotlib.org/
+[num]:http://www.numpy.org/
   
 ## Run HM:  
 用来测试HM编码器，可以一次启动所有编码程序（对应每个测试序列的每个测试点---码率点或QP点），生成对应的编码日志，码流，
@@ -17,6 +22,9 @@
 
 ## Run frame:  
 用来提取某一编码日志中所有帧的结果，如每一帧的POC、帧类型、bits、PSNR，以及额外自定义指标，输出到表格
+
+## Plot frame:  
+用来画PSNR等指标的以GOP为单位的对比折线图  
 
 # How to run HM encoder:
 
@@ -111,3 +119,22 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 **注：**  
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看提供的输出示例  
+
+
+# How to plot:
+
+下图是plot frame 文件夹结构：  
+![fig8](https://github.com/whing123/Scripts-for-HM/raw/master/images/8.png)  
+
+config.txt是配置文件  
+
+**下面主要讲解config.txt的配置：**  
+
+![fig9](https://github.com/whing123/Scripts-for-HM/raw/master/images/9.png)  
+
+anchor：指定anchor日志      
+test：指定test日志  
+\*\*\*end\*\*\*：表示结束  
+
+**注：**  
+1. 所有路径需要在末尾（针对目录）加上反斜杠  
