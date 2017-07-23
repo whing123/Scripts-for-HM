@@ -42,7 +42,7 @@ with open(config_file_name, 'r') as fp:
             #print(cfg1)
 
         elif line.startswith('cfg2 path:'):
-            if '#' in line:
+            if '#' in line:    # 之后为注释
                 before, after = line.split('#')
                 before, cfg2_path = before.split('cfg2 path:')
             else:

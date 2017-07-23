@@ -9,12 +9,14 @@ import time
 time_stamp = time.strftime('%y_%m_%d_%H_%M_%S', time.localtime(time.time()))
 
 items = ['Seq name', 'target_rate', 'actual_rate', 'Y-PSNR', 'U-PSNR', 'V-PSNR', 'encoding_time']
+added_items = []
 
 config_file_name = 'config.txt'
 with open(config_file_name, 'r') as fp:
     line = ' '
     while line:
         line = fp.readline()
+        line = line.strip()
 
         if line.startswith('logs path:'):
             before, logs_path = line.split('logs path:')
@@ -27,9 +29,10 @@ with open(config_file_name, 'r') as fp:
         elif line.startswith('adding item:'):
             before, after = line.split('adding item:')
             after = after.strip()
-            added_items = after.split()
-            items.extend(added_items)
-            #print(added_items)
+            if after:
+            	added_items = after.split()
+            	items.extend(added_items)
+            	#print(added_items)
         elif line.startswith('***'):
             break
 fp.close()
