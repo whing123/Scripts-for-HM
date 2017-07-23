@@ -18,11 +18,11 @@
 ## Run frame:  
 用来提取某一编码日志中所有帧的结果，如每一帧的POC、帧类型、bits、PSNR，以及额外自定义指标，输出到表格
 
-
 # How to run HM encoder:
 
 下图是run HM 文件夹结构：  
-![fig1](https://github.com/whing123/Scripts-for-HM/raw/master/images/1.png) 
+![fig1](https://github.com/whing123/Scripts-for-HM/raw/master/images/1.png)  
+
 其中每个子文件夹的作用如下：  
 
 **cfg**：此文件夹是对应HM工程下的配置文件夹，只需原封不动复制到此根目录下，编码中编码器配置文件，以及序列配置文件均可在此文件夹中找到，
@@ -35,10 +35,6 @@
 会在result\\当次编码文件目录\\yuvbin\\子文件夹下  
 **HM_cmd.py**：为编码脚本文件，所有配置准备就绪后，即可双击启动所有编码。若一次要启动的数量很多，需查看机器cpu和内存是否足够，
 建议此时换用实验室配置较高的机器  
-
-
-[fig1]: images/1.PNG "fig1" { width:auto; max-width:90% }
-[fig2]: images/2.png "fig2" { width:auto; max-width:90% }
 
 **下面主要讲一下如何修改 config.txt：**  
 
@@ -75,8 +71,6 @@ HM序列默认符合，无需更改
 以及一个readme.txt，可自行向此文件内添加本次编码的说明。另外，编码时会自动在此目录下生成编码日志目录logs\\以及码流目录yuvbin\\，用于
 存放编码日志，码流文件以及重建yuv  
 
-[fig3]: images/3.png "fig3" { width:auto; max-width:90%;}
-
 # How to extract important data from logs:
 下图是run logs 文件夹结构：  
 ![fig4](https://github.com/whing123/Scripts-for-HM/raw/master/images/4.png)  
@@ -95,13 +89,11 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例   
 
-[fig4]: images/4.PNG "fig4" { width:auto; max-width:90% }
-[fig5]: images/5.PNG "fig5" { width:auto; max-width:90% }
-
 # How to extract data of each frame:
 
 下图是run frame 文件夹结构：  
 ![fig6](https://github.com/whing123/Scripts-for-HM/raw/master/images/6.png)  
+
 config.txt是配置文件  
 
 **下面主要讲解config.txt的配置：**  
@@ -116,6 +108,3 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 **注：**  
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例  
-
-[fig6]: images/6.PNG "fig5" { width:auto; max-width:90% }
-[fig7]: images/7.PNG "fig7" { width:auto; max-width:90% }
