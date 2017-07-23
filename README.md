@@ -22,13 +22,13 @@
 # How to run HM encoder:
 
 下图是run HM 文件夹结构：  
-![fig1]  
+![fig1](https://github.com/whing123/Scripts-for-HM/raw/master/images/1.png) 
 其中每个子文件夹的作用如下：  
 
 **cfg**：此文件夹是对应HM工程下的配置文件夹，只需原封不动复制到此根目录下，编码中编码器配置文件，以及序列配置文件均可在此文件夹中找到，
 并且在编码时不需要作任何修改  
 **config**：此文件夹保存有最常用的和脚本配套的配置文件，实际编码时只需将里面的config.txt拷贝至外层根目录，并作对应修改即可，但不可重命名  
-![fig2]  
+![fig2](https://github.com/whing123/Scripts-for-HM/raw/master/images/2.png)  
 
 **exe**：此文件夹存放要测试的编码器exe文件，建议为release版，且在本地debug测试无误  
 **result**：此文件夹为编码输出结果文件夹，需提前建好。所有编码日志文件会在result\\当次编码文件目录\\logs\\子文件夹下，码流bin和重建yuv
@@ -43,7 +43,7 @@
 **下面主要讲一下如何修改 config.txt：**  
 
 下图为config.txt内容：  
-![fig3]  
+![fig3](https://github.com/whing123/Scripts-for-HM/raw/master/images/3.png)  
 
 **1. 参数区**  
 
@@ -79,12 +79,12 @@ HM序列默认符合，无需更改
 
 # How to extract important data from logs:
 下图是run logs 文件夹结构：  
-![fig4]  
+![fig4](https://github.com/whing123/Scripts-for-HM/raw/master/images/4.png)  
 config.txt是配置文件  
 
 **下面主要讲解config.txt的配置：**  
 
-![fig5]  
+![fig5](https://github.com/whing123/Scripts-for-HM/raw/master/images/5.png)  
 
 logs path：指定要提取数据的日志路径  
 output path：指定输出表格的路径，为空表示当前路径  
@@ -101,12 +101,12 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 # How to extract data of each frame:
 
 下图是run frame 文件夹结构：  
-![fig6]  
+![fig6](https://github.com/whing123/Scripts-for-HM/raw/master/images/6.png)  
 config.txt是配置文件  
 
 **下面主要讲解config.txt的配置：**  
 
-![fig7]  
+![fig7](https://github.com/whing123/Scripts-for-HM/raw/master/images/7.png)  
 
 logs path：指定要提取数据的单个日志，一般置于该目录logs子目录下  
 output path：指定输出表格的路径，为空表示当前路径  
