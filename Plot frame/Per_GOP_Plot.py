@@ -2,9 +2,28 @@
 import matplotlib.pyplot as plt 
 import numpy as np
 
-### read anchor log
 
-file_name1 = "anchor_encoder_256.log"
+config_file_name = 'config.txt'
+with open(config_file_name, 'r') as fp:
+    line = ' '
+    while line:
+        line = fp.readline()
+        line = line.strip()
+
+        if line.startswith('anchor:'):
+    	    before, anchorFile = line.split('anchor:')
+    	    anchorFile = anchorFile.strip()
+
+        elif line.startswith('test:'):
+    	    before, testFile = line.split('test:')
+    	    testFile = testFile.strip()
+
+        elif line.startswith('***'):
+            break
+fp.close()
+
+
+### read anchor log 
 
 d_Bit1 = []
 d_PSNR1 = []
@@ -12,7 +31,7 @@ d_SSIM1 = []
 d_MOSP1 = []
 parts1 = []
 
-with open(file_name1,"r") as f1:
+with open(anchorFile,"r") as f1:
    for line in f1:
        
         if line.startswith('SUMMARY'):
@@ -47,15 +66,13 @@ f1.close()
 
 ### read my log
 
-file_name2 = "my_encoder_256.log"
-
 d_Bit2 = []
 d_PSNR2 = []
 d_SSIM2 = []
 d_MOSP2 = []
 parts2 = []
 
-with open(file_name2,"r") as f2:
+with open(testFile,"r") as f2:
    for line in f2:
        
         if line.startswith('SUMMARY'):
@@ -123,19 +140,19 @@ for i in range(int(poc)+1):
     sum_MOSP2 = sum_MOSP2 + d_MOSP2[i]
 
     if (i+1) % 4 == 0:
-        avg_GOP_PSNR1.append(sum_PSNR1/4)
-        avg_GOP_Bit1.append(sum_Bit1/4)
-        avg_GOP_SSIM1.append(sum_SSIM1/4)
-        avg_GOP_MOSP1.append(sum_MOSP1/4)
+        avg_GOP_PSNR1.append(sum_PSNR1/4.0)
+        avg_GOP_Bit1.append(sum_Bit1/4.0)
+        avg_GOP_SSIM1.append(sum_SSIM1/4.0)
+        avg_GOP_MOSP1.append(sum_MOSP1/4.0)
         sum_PSNR1 = 0
         sum_Bit1  = 0
         sum_SSIM1 = 0
         sum_MOSP1 = 0
         
-        avg_GOP_PSNR2.append(sum_PSNR2/4)
-        avg_GOP_Bit2.append(sum_Bit2/4)
-        avg_GOP_SSIM2.append(sum_SSIM2/4)
-        avg_GOP_MOSP2.append(sum_MOSP2/4)
+        avg_GOP_PSNR2.append(sum_PSNR2/4.0)
+        avg_GOP_Bit2.append(sum_Bit2/4.0)
+        avg_GOP_SSIM2.append(sum_SSIM2/4.0)
+        avg_GOP_MOSP2.append(sum_MOSP2/4.0)
         sum_PSNR2 = 0
         sum_Bit2  = 0
         sum_SSIM2 = 0
@@ -170,10 +187,11 @@ for x in range (GOP_Num):
     ypoints_SSIM2.append(avg_GOP_SSIM2[x])
     ypoints_MOSP2.append(avg_GOP_MOSP2[x])
     
-
-plt.rc('xtick', labelsize=8) # 设置坐标轴刻度显示大小
+# 设置坐标轴刻度显示大小
+plt.rc('xtick', labelsize=8) 
 plt.rc('ytick', labelsize=8)
 
+# PSNR
 fig, ax = plt.subplots()
 ax.plot(xpoints, ypoints_PSNR1, 'b', xpoints, ypoints_PSNR2, 'r', linewidth=1)
 ax.set_xticks([0,20,40,60,80,100,120])
@@ -182,6 +200,7 @@ ax.set_xlabel('GOP number')
 ax.set_ylabel('Average PSNR per GOP')
 ax.legend(['anchor','proposed'])
 
+# SSIM
 fig, ax = plt.subplots()
 ax.plot(xpoints, ypoints_SSIM1, 'b', xpoints, ypoints_SSIM2, 'r', linewidth=1)
 ax.set_yticks([0.75, 0.8, 0.85, 0.9, 0.95])
@@ -189,6 +208,7 @@ ax.set_xlabel('GOP number')
 ax.set_ylabel('Average SSIM per GOP')
 ax.legend(['anchor','proposed'])
 
+# MOSp
 fig, ax = plt.subplots()
 ax.plot(xpoints, ypoints_MOSP1, 'b', xpoints, ypoints_MOSP2, 'r', linewidth=1)
 ax.set_yticks([0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9])
@@ -199,6 +219,7 @@ ax.legend(['anchor','proposed'])
 #ax.yaxis.grid(True, which='minor') #y坐标轴的网格使用次刻度
 
 '''
+# bitrate
 fig, ax = plt.subplots()
 ax.plot(xpoints, ypoints_bitrate1, 'b', xpoints, ypoints_bitrate2, 'r')
 ax.set_xlabel('GOP number')
@@ -206,5 +227,5 @@ ax.set_ylabel('Average Rate per GOP')
 ax.legend(['anchor','proposed'])
 '''
 
-#plt.grid(True)
+#plt.grid(True) # 加网格
 plt.show()

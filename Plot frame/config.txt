@@ -1,0 +1,3 @@
+anchor: C:\Users\DELL\Desktop\anchor_encoder.log
+test: C:\Users\DELL\Desktop\test_encoder.log
+***end***
