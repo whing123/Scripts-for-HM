@@ -37,7 +37,7 @@
 建议此时换用实验室配置较高的机器  
 
 
-[fig1]: images/1.PNG "fig1" { width:auto; max-width:90% }
+[fig1]: images/1.png "fig1" { width:auto; max-width:90% }
 [fig2]: images/2.png "fig2" { width:auto; max-width:90% }
 
 **下面主要讲一下如何修改 config.txt：**  
@@ -95,8 +95,8 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例   
 
-[fig4]: images/4.PNG "fig4" { width:auto; max-width:90% }
-[fig5]: images/5.PNG "fig5" { width:auto; max-width:90% }
+[fig4]: images/4.png "fig4" { width:auto; max-width:90% }
+[fig5]: images/5.png "fig5" { width:auto; max-width:90% }
 
 # How to extract data of each frame:
 
@@ -117,5 +117,5 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例  
 
-[fig6]: images/6.PNG "fig5" { width:auto; max-width:90% }
-[fig7]: images/7.PNG "fig7" { width:auto; max-width:90% }
+[fig6]: images/6.png "fig5" { width:auto; max-width:90% }
+[fig7]: images/7.png "fig7" { width:auto; max-width:90% }
