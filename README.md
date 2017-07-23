@@ -36,13 +36,9 @@
 **HM_cmd.py**：为编码脚本文件，所有配置准备就绪后，即可双击启动所有编码。若一次要启动的数量很多，需查看机器cpu和内存是否足够，
 建议此时换用实验室配置较高的机器  
 
-<<<<<<< HEAD
-
 [fig1]: images/1.png "fig1" { width:auto; max-width:90% }
 [fig2]: images/2.png "fig2" { width:auto; max-width:90% }
 
-=======
->>>>>>> 67ca1e0a308c47bc249580649c529b339302743c
 **下面主要讲一下如何修改 config.txt：**  
 
 下图为config.txt内容：  
@@ -96,12 +92,9 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例   
 
-<<<<<<< HEAD
 [fig4]: images/4.png "fig4" { width:auto; max-width:90% }
 [fig5]: images/5.png "fig5" { width:auto; max-width:90% }
 
-=======
->>>>>>> 67ca1e0a308c47bc249580649c529b339302743c
 # How to extract data of each frame:
 
 下图是run frame 文件夹结构：  
@@ -121,9 +114,7 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 **注：**  
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
 2. 可查看输出示例  
-<<<<<<< HEAD
 
 [fig6]: images/6.png "fig5" { width:auto; max-width:90% }
 [fig7]: images/7.png "fig7" { width:auto; max-width:90% }
-=======
->>>>>>> 67ca1e0a308c47bc249580649c529b339302743c
+
