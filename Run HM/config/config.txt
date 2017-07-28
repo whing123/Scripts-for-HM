@@ -35,7 +35,9 @@ KristenAndSara_1280x720_60         512 1000 2000 4000
 ***end***
 
 
-reference:
+Reference:
+
+RC Mode:
 class: classB
 BasketballDrive_1920x1080_50       2000 3000 7000 10000
 BQTerrace_1920x1080_60             2000 3000 7000 10000
@@ -59,4 +61,30 @@ class: classE
 FourPeople_1280x720_60             512 1000 2000 4000
 Johnny_1280x720_60                 512 1000 2000 4000
 KristenAndSara_1280x720_60         512 1000 2000 4000
+###
+
+QP Mode:
+class: classB
+BasketballDrive_1920x1080_50       22 27 32 37
+BQTerrace_1920x1080_60             22 27 32 37
+Cactus_1920x1080_50                22 27 32 37
+Kimono_1920x1080_24                22 27 32 37
+ParkScene_1920x1080_24             22 27 32 37
+###
+class: classC
+BasketballDrill_832x480_50         22 27 32 37
+BQMall_832x480_60                  22 27 32 37
+PartyScene_832x480_50              22 27 32 37
+RaceHorsesC_832x480_30             22 27 32 37
+###
+class: classD
+BasketballPass_416x240_50          22 27 32 37
+BlowingBubbles_416x240_50          22 27 32 37
+BQSquare_416x240_60                22 27 32 37
+RaceHorses_416x240_30              22 27 32 37
+###
+class: classE
+FourPeople_1280x720_60             22 27 32 37
+Johnny_1280x720_60                 22 27 32 37
+KristenAndSara_1280x720_60         22 27 32 37
 ###

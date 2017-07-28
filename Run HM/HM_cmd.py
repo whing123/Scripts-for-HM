@@ -21,6 +21,7 @@ with open(config_file_name, 'r') as fp:
     line = ' '
     while line:
         line = fp.readline()
+        line = line.strip()
 
         if line.startswith('identifier:'):
             identifier = line
@@ -90,7 +91,7 @@ with open(config_file_name, 'r') as fp:
             mode, after = after.split('#')
             mode = mode.strip()
             if mode == '1':
-                mode_str = 'rate control'
+                mode_str = 'Rate Control'
             elif mode == '0':
                 mode == 'QP'
                 mode_str = 'Const QP'
@@ -103,7 +104,9 @@ with open(config_file_name, 'r') as fp:
         elif line.startswith('testing seq and rate:'):
             while line:
                 line = fp.readline()
-                if line.startswith('***'):
+                line = line.strip()
+
+                if line.startswith('***end***'):
                     break
 
                 before, class_name = line.split(':')
@@ -113,6 +116,7 @@ with open(config_file_name, 'r') as fp:
 
                 while line:
                     line = fp.readline()
+                    line = line.strip()
                     if '#' in line:
                         break
 
@@ -147,6 +151,10 @@ with open(config_file_name, 'r') as fp:
                         #os.popen(cmd)
                         #os.system(cmd)  # only one at once
                         subprocess.Popen(cmd, shell=True)
+
+            # end here
+            if line.startswith('***end***'):
+                break
 
 fp.close()
 
