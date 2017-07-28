@@ -18,10 +18,14 @@ fenclog.write('\n' + '---Starting---' + '\n')
 
 config_file_name = 'config.txt'
 with open(config_file_name, 'r') as fp:
-    line = ' '
-    while line:
+
+    while True:
+
         line = fp.readline()
         line = line.strip()
+
+        if not line:
+            continue
 
         if line.startswith('identifier:'):
             identifier = line
@@ -102,55 +106,64 @@ with open(config_file_name, 'r') as fp:
             fenclog.write('mode: ' + mode_str + '\n')
 
         elif line.startswith('testing seq and rate:'):
-            while line:
+
+            while True:
                 line = fp.readline()
                 line = line.strip()
+
+                if not line:
+                    continue
 
                 if line.startswith('***end***'):
                     break
 
-                before, class_name = line.split(':')
-                class_name = class_name.strip()
-                fenclog.write('\n' + 'class name: ' + class_name + '\n')
-                #print(class_name)
+                if line.startswith('class:'):
+                	before, class_name = line.split(':')
+                	class_name = class_name.strip()
+                	fenclog.write('\n' + 'class name: ' + class_name + '\n')
+                	#print(class_name)
 
-                while line:
-                    line = fp.readline()
-                    line = line.strip()
-                    if '#' in line:
-                        break
+	                while True:
+	                    line = fp.readline()
+	                    line = line.strip()
 
-                    seq = line.split()
-                    seq_name = seq[0]
-                    vals = seq[1:]
-                    fenclog.write('sequence name: ' + seq_name + '\n')
-                    #print(seq_name)
+	                    if not line:
+                		continue
+                			
+	                    if line.startswith('###'):
+                    		break
 
-                    for idx, val in enumerate(vals):
+	                    seq = line.split()
+	                    seq_name = seq[0]
+	                    vals = seq[1:]
+	                    fenclog.write('sequence name: ' + seq_name + '\n')
+	                    #print(seq_name)
 
-                        if mode == '1':
-                            mode_cmd = '--RateControl=1' + ' ' + '--TargetBitrate=' + val + '000'
-                            mode_s = 'Rate'
-                        elif mode == '0':
-                            mode_cmd = '--QP=' + val
-                            mode_s = 'QP'
-                        fenclog.write(mode_s + ' ' + str(idx + 1) + ': ' + val + '\n')
-                        #print(mode_s + ' ' + str(idx + 1) + ': ' + val + '\n')
+	                    for idx, val in enumerate(vals):
 
-                        cmd = encoder_exe + ' -c ' + cfg1 + ' -c ' + cfg2_path + seq_name.split('_')[0] + '.cfg' + ' ' \
-                              + '--InputFile=' + seq_path + class_name + '\\' + seq_name + '.yuv' + ' ' \
-                              + '--BitstreamFile=' + yuvbin_path + '\\' + seq_name + '_' + val + '.bin' + ' ' \
-                              + '--ReconFile=' + yuvbin_path + '\\' + seq_name + '_' + val + '.yuv' + ' ' \
-                              + mode_cmd + ' ' \
-                              + '>' + logs_path + '\\' + seq_name + '_' + val + '.log' + ' ' \
-                              + extra_cmd
+	                        if mode == '1':
+	                            mode_cmd = '--RateControl=1' + ' ' + '--TargetBitrate=' + val + '000'
+	                            mode_s = 'Rate'
+	                        elif mode == '0':
+	                            mode_cmd = '--QP=' + val
+	                            mode_s = 'QP'
+	                        fenclog.write(mode_s + ' ' + str(idx + 1) + ': ' + val + '\n')
+	                        #print(mode_s + ' ' + str(idx + 1) + ': ' + val + '\n')
+
+	                        cmd = encoder_exe + ' -c ' + cfg1 + ' -c ' + cfg2_path + seq_name.split('_')[0] + '.cfg' + ' ' \
+	                              + '--InputFile=' + seq_path + class_name + '\\' + seq_name + '.yuv' + ' ' \
+	                              + '--BitstreamFile=' + yuvbin_path + '\\' + seq_name + '_' + val + '.bin' + ' ' \
+	                              + '--ReconFile=' + yuvbin_path + '\\' + seq_name + '_' + val + '.yuv' + ' ' \
+	                              + mode_cmd + ' ' \
+	                              + '>' + logs_path + '\\' + seq_name + '_' + val + '.log' + ' ' \
+	                              + extra_cmd
 
 
-                        fenclog.write('cmd: ' + '\n' +cmd + '\n')
-                        #print(cmd)
-                        #os.popen(cmd)
-                        #os.system(cmd)  # only one at once
-                        subprocess.Popen(cmd, shell=True)
+	                        fenclog.write('cmd: ' + '\n' +cmd + '\n')
+	                        #print(cmd)
+	                        #os.popen(cmd)
+	                        #os.system(cmd)  # only one at once
+	                        subprocess.Popen(cmd, shell=True)
 
             # end here
             if line.startswith('***end***'):

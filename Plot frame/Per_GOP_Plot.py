@@ -5,10 +5,13 @@ import numpy as np
 
 config_file_name = 'config.txt'
 with open(config_file_name, 'r') as fp:
-    line = ' '
-    while line:
+
+    while True:
         line = fp.readline()
         line = line.strip()
+
+        if not line:
+            continue
 
         if line.startswith('anchor:'):
     	    before, anchorFile = line.split('anchor:')
@@ -18,7 +21,7 @@ with open(config_file_name, 'r') as fp:
     	    before, testFile = line.split('test:')
     	    testFile = testFile.strip()
 
-        elif line.startswith('***'):
+        elif line.startswith('***end***'):
             break
 fp.close()
 

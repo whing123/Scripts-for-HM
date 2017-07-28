@@ -13,11 +13,14 @@ added_items = []
 
 config_file_name = 'config.txt'
 with open(config_file_name, 'r') as fp:
-    line = ' '
-    while line:
+    
+    while True:
         line = fp.readline()
         line = line.strip()
 
+        if not line:
+            continue
+        
         if line.startswith('logs path:'):
             before, logs_path = line.split('logs path:')
             logs_path = logs_path.strip()
@@ -33,7 +36,7 @@ with open(config_file_name, 'r') as fp:
             	added_items = after.split()
             	items.extend(added_items)
             	#print(added_items)
-        elif line.startswith('***'):
+        elif line.startswith('***end***'):
             break
 fp.close()
 

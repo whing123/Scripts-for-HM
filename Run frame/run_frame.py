@@ -17,10 +17,13 @@ added_items = []
 
 config_file_name = 'config.txt'
 with open(config_file_name, 'r') as fp:
-    line = ' '
-    while line:
+
+    while True:
         line = fp.readline()
         line = line.strip()
+
+        if not line:
+            continue
 
         if line.startswith('logs path:'):
             before, logs_path = line.split('logs path:')
@@ -38,7 +41,7 @@ with open(config_file_name, 'r') as fp:
                 seq_items.extend(added_items)
                 frame_items.extend(added_items)
                 #print(added_items)
-        elif line.startswith('***'):
+        elif line.startswith('***end***'):
             break
 fp.close()
 
@@ -78,6 +81,10 @@ row = 4
 while not line.startswith('Total Time:'):
     line = file.readline()
     line = line.strip()
+
+    if not line:
+        continue
+    
     if not line.startswith('SUMMARY'):
         
         if line.startswith('POC'):
