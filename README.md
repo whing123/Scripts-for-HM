@@ -5,13 +5,13 @@
 所有脚本只适用于Python 3以上  
 
 **准备工作：**  
-1. 日志处理时需提前安装[xlwt][xls] 和 [xlrd] [xlrd] 
+1. 日志处理时需提前安装[xlwt][xls] 和 [xlrd] [xls2] 
 2. 画图时需提前安装[matplotlib][mat] 和 [numpy][num]  
 
 [py]:https://www.python.org/downloads/
 [hevc]:http://www.hevc.info/
 [xls]:https://pypi.python.org/pypi/xlwt
-[xlrd]:https://pypi.python.org/pypi/xlrd
+[xls2]:https://pypi.python.org/pypi/xlrd
 [mat]:http://matplotlib.org/
 [num]:http://www.numpy.org/
   
@@ -107,7 +107,7 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 3. 可查看提供的输出示例   
 
 
-# How to process excel to adjust orders
+# How to process excel to adjust orders:
 下图是Run xls 文件夹结构：  
 ![fig10](https://github.com/whing123/Scripts-for-HM/raw/master/images/10.png)  
 config.txt是配置文件  
@@ -116,7 +116,7 @@ config.txt是配置文件
 
 ![fig11](https://github.com/whing123/Scripts-for-HM/raw/master/images/11.png)  
 
-logs path：指定需要调整的日志路径  
+logs path：指定需要调整顺序的日志路径  
 output path：指定输出表格路径，为空表示当前路径  
 col order：前两行表示原来的列顺序，第三行为自定义顺序，按需谨慎修改  
 seq names：第一行表示序列数，接下来的序列需按测试表顺序排列，其对应的QP点（从小到大）或码率点（从大到小）
