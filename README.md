@@ -5,7 +5,7 @@
 所有脚本只适用于Python 3以上  
 
 **准备工作：**  
-1. 日志处理时需提前安装[xlwt][xls] 和 [xlrd] [xls2] 
+1. 日志处理时需提前安装[xlwt][xls] 和 [xlrd][xls2] 
 2. 画图时需提前安装[matplotlib][mat] 和 [numpy][num]  
 
 [py]:https://www.python.org/downloads/
