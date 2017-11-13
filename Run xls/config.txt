@@ -1,0 +1,63 @@
+logs path: C:\Users\DELL\Desktop\data_test-1.xls
+output path:
+col order:
+A B C D E F G H I
+0 1 2 3 4 5 6 7 8
+0 1 4 5 2 3 8 6 7
+seq names:
+16
+Kimono_1920x1080_24                22 27 32 37
+ParkScene_1920x1080_24             22 27 32 37
+Cactus_1920x1080_50                22 27 32 37
+BasketballDrive_1920x1080_50       22 27 32 37
+BQTerrace_1920x1080_60             22 27 32 37
+BasketballDrill_832x480_50         22 27 32 37
+BQMall_832x480_60                  22 27 32 37
+PartyScene_832x480_50              22 27 32 37
+RaceHorsesC_832x480_30             22 27 32 37
+BasketballPass_416x240_50          22 27 32 37
+BQSquare_416x240_60                22 27 32 37
+BlowingBubbles_416x240_50          22 27 32 37
+RaceHorses_416x240_30              22 27 32 37
+FourPeople_1280x720_60             22 27 32 37
+Johnny_1280x720_60                 22 27 32 37
+KristenAndSara_1280x720_60         22 27 32 37
+***end***
+
+References:
+classB-classE:
+RC:
+Kimono_1920x1080_24                6000 4000 1600 1000
+ParkScene_1920x1080_24             6000 4000 1600 1000
+Cactus_1920x1080_50                10000 7000 3000 2000
+BasketballDrive_1920x1080_50       10000 7000 3000 2000
+BQTerrace_1920x1080_60             10000 7000 3000 2000
+BasketballDrill_832x480_50         2000 1200 512 384
+BQMall_832x480_60                  2000 1200 512 384
+PartyScene_832x480_50              2000 1200 512 384
+RaceHorsesC_832x480_30             2000 1200 512 384
+BasketballPass_416x240_50          1500 850 384 256
+BQSquare_416x240_60                1500 850 384 256
+BlowingBubbles_416x240_50          1500 850 384 256
+RaceHorses_416x240_30              1500 850 384 256
+FourPeople_1280x720_60             4000 2000 1000 512
+Johnny_1280x720_60                 4000 2000 1000 512
+KristenAndSara_1280x720_60         4000 2000 1000 512
+
+QP:
+Kimono_1920x1080_24                22 27 32 37
+ParkScene_1920x1080_24             22 27 32 37
+Cactus_1920x1080_50                22 27 32 37
+BasketballDrive_1920x1080_50       22 27 32 37
+BQTerrace_1920x1080_60             22 27 32 37
+BasketballDrill_832x480_50         22 27 32 37
+BQMall_832x480_60                  22 27 32 37
+PartyScene_832x480_50              22 27 32 37
+RaceHorsesC_832x480_30             22 27 32 37
+BasketballPass_416x240_50          22 27 32 37
+BQSquare_416x240_60                22 27 32 37
+BlowingBubbles_416x240_50          22 27 32 37
+RaceHorses_416x240_30              22 27 32 37
+FourPeople_1280x720_60             22 27 32 37
+Johnny_1280x720_60                 22 27 32 37
+KristenAndSara_1280x720_60         22 27 32 37
