@@ -5,12 +5,13 @@
 所有脚本只适用于Python 3以上  
 
 **准备工作：**  
-1. 日志处理时需提前安装[xlwt][xls]  
+1. 日志处理时需提前安装[xlwt][xls] 和 [xlrd] [xlrd] 
 2. 画图时需提前安装[matplotlib][mat] 和 [numpy][num]  
 
 [py]:https://www.python.org/downloads/
 [hevc]:http://www.hevc.info/
 [xls]:https://pypi.python.org/pypi/xlwt
+[xlrd]:https://pypi.python.org/pypi/xlrd
 [mat]:http://matplotlib.org/
 [num]:http://www.numpy.org/
   
@@ -21,6 +22,9 @@
 ## Run logs:  
 用来提取编码结果，从给定日志文件夹下提取出每个日志的summary关键数据，如码率、PSNR、编码时间、以及额外自定义指标，输出到表格
 
+## Run xls:
+作为Run logs的后处理，调整行列顺序，实现一键粘贴
+
 ## Run frame:  
 用来提取某一编码日志中所有帧的结果，如每一帧的POC、帧类型、bits、PSNR，以及额外自定义指标，输出到表格
 
@@ -29,7 +33,7 @@
 
 # How to run HM encoder:
 
-下图是run HM 文件夹结构：  
+下图是Run HM 文件夹结构：  
 ![fig1](https://github.com/whing123/Scripts-for-HM/raw/master/images/1.png)  
 
 其中每个子文件夹的作用如下：  
@@ -82,8 +86,9 @@ HM序列默认符合要求，无需更改
 以及一个readme.txt，可自行向此文件内添加本次编码的说明。另外，编码时会自动在此目录下生成编码日志目录logs\\以及码流目录yuvbin\\，
 用于存放编码日志，码流文件以及重建yuv  
 
+
 # How to extract important data from logs:
-下图是run logs 文件夹结构：  
+下图是Run logs 文件夹结构：  
 ![fig4](https://github.com/whing123/Scripts-for-HM/raw/master/images/4.png)  
 config.txt是配置文件  
 
@@ -98,12 +103,33 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 
 **注：**  
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
-2. 可查看提供的输出示例   
+2. 输出路径不需要指定文件名  
+3. 可查看提供的输出示例   
+
+
+# How to process excel to adjust orders
+下图是Run xls 文件夹结构：  
+![fig10](https://github.com/whing123/Scripts-for-HM/raw/master/images/10.png)  
+config.txt是配置文件  
+
+**下面主要讲解config.txt的配置：**  
+
+![fig11](https://github.com/whing123/Scripts-for-HM/raw/master/images/11.png)  
+
+logs path：指定需要调整的日志路径  
+output path：指定输出表格路径，为空表示当前路径  
+col order：前两行表示原来的列顺序，第三行为自定义顺序，按需谨慎修改  
+seq names：第一行表示序列数，接下来的序列需按测试表顺序排列，其对应的QP点（从小到大）或码率点（从大到小）
+\*\*\*end\*\*\*：表示结束  
+
+**注：**  
+1. 所有路径需要在末尾（针对目录）加上反斜杠  
+2. 输出路径不需要指定文件名
 
 
 # How to extract data of each frame:
 
-下图是run frame 文件夹结构：  
+下图是Run frame 文件夹结构：  
 ![fig6](https://github.com/whing123/Scripts-for-HM/raw/master/images/6.png)  
 
 config.txt是配置文件  
@@ -119,12 +145,13 @@ adding item：指定编码器额外添加的自定义指标，如果有多个以
 
 **注：**  
 1. 所有路径需要在末尾（针对目录）加上反斜杠  
-2. 可查看提供的输出示例  
+2. 输出路径不需要指定文件名  
+3. 可查看提供的输出示例  
 
 
 # How to plot:
 
-下图是plot frame 文件夹结构：  
+下图是Plot frame 文件夹结构：  
 ![fig8](https://github.com/whing123/Scripts-for-HM/raw/master/images/8.png)  
 
 config.txt是配置文件  
